@@ -42,7 +42,7 @@ lazy val commonSettings =
     organization := "default",
     organizationName := "konstantin.silin",
     startYear := Some(2019),
-    licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0")),
+    licenses += ("BSD-3-Clause", url("https://opensource.org/licenses/BSD-3-Clause")),
     scalacOptions ++= Seq(
       "-unchecked",
       "-deprecation",

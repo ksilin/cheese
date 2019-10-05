@@ -14,4 +14,4 @@ legal authority to do so.
 ## License ##
 
 This code is open source software licensed under the
-[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0) license.
+[BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) license.
