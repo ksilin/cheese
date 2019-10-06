@@ -1,3 +1,5 @@
 addSbtPlugin("com.dwijnand"      % "sbt-dynver"      % "4.0.0")
 addSbtPlugin("de.heikoseeberger" % "sbt-header"      % "5.2.0")
 addSbtPlugin("org.scalameta"     % "sbt-scalafmt"    % "2.0.5")
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.4.1")
+addSbtPlugin("com.tapad" % "sbt-docker-compose" % "1.0.34")

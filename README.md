@@ -1,6 +1,6 @@
 # cheese #
 
-Welcome to cheese!
+Sweet streams are made of cheese! Playing with Kafka Streams
 
 ## Contribution policy ##
 
