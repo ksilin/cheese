@@ -22,9 +22,17 @@ https://kafka.apache.org/20/documentation/streams/developer-guide/dsl-api.html#s
 
 https://medium.com/@danieljameskay/kafka-streams-dsl-for-scala-the-basics-11d603295f5c
 
-## TODOs
+## guides & examples
 
 https://jaceklaskowski.gitbooks.io/mastering-kafka-streams/
+
+https://kafka-tutorials.confluent.io/
+
+https://github.com/confluentinc/kafka-streams-examples
+
+https://www.confluent.io/blog/beginners-perspective-kafka-streams-building-real-time-walkthrough-detection
+
+## TODO
 
 https://docs.confluent.io/current/streams/faq.html
 
