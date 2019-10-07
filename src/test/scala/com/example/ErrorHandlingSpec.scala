@@ -30,17 +30,18 @@
 
 package com.example
 
-import org.apache.kafka.streams.scala.kstream.KStream
-
-import org.apache.kafka.streams.scala.ImplicitConversions._
 import org.apache.kafka.streams.KafkaStreams
+import org.apache.kafka.streams.scala.kstream.{ Consumed, KStream }
+import org.apache.kafka.streams.scala.ImplicitConversions._
 
-class SimpleStreamsSpec extends StreamSpecBase {
+class ErrorHandlingSpec extends StreamSpecBase {
   import org.apache.kafka.streams.scala.Serdes._
+
+  // TODO - https://docs.confluent.io/current/streams/faq.html#failure-and-exception-handling
 
   private val topicName = appId
 
-  val simpleStream: KStream[String, String] = builder.stream[String, String](topicName)
+  val simpleStream = builder.stream[String, String](topicName)
 
   var processed = 0
 
@@ -49,14 +50,7 @@ class SimpleStreamsSpec extends StreamSpecBase {
     (k, v.toUpperCase())
   } foreach ((k, v) => processed = processed + 1)
 
-  // why cannot I reduce an ungrouped stream?
-  // overloaded method value aggregate with alternatives:
-  //[error]        (x$1: org.apache.kafka.streams.kstream.Initializer[Int],x$2: org.apache.kafka.streams.kstream.Aggregator[_ >: String, _ >: String, Int],x$3: org.apache.kafka.streams.kstream.Materialized[String,Int,org.apache.kafka.streams.state.KeyValueStore[org.apache.kafka.common.utils.Bytes,Array[Byte]]])org.apache.kafka.streams.kstream.KTable[String,Int] <and>
-  //[error]        (x$1: org.apache.kafka.streams.kstream.Initializer[Int],x$2: org.apache.kafka.streams.kstream.Aggregator[_ >: String, _ >: String, Int])org.apache.kafka.streams.kstream.KTable[String,Int]
-  //[error]       cannot be applied to (Int)
-  // val gStream = simpleStream.groupByKey().aggregate[Int](0, (k: String, v: String, agg: Int) => agg + 1)
-
-  val topo = builder.build() // TODO - what properties can be passed at build time?
+  val topo = builder.build()
 
   createTestTopic(topicName)
   val testDataCount = 10
@@ -64,12 +58,14 @@ class SimpleStreamsSpec extends StreamSpecBase {
 
   val streams = new KafkaStreams(topo, streamConfigs)
 
-  "simple test" in {
-    logger.info("running")
-    streams.start()
-    Thread.sleep(3000)
-    streams.close()
-    logger.info("stopped")
-    processed mustBe testDataCount
-  }
+  "uncaughtExceptionHandler" in {}
+
+  "DeserializationExceptionHandler" in {}
+
+  "DLQ" in {}
+
+  "log and fail" in {}
+
+  "ProductionExceptionHandler" in {}
+
 }

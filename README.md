@@ -15,3 +15,39 @@ legal authority to do so.
 
 This code is open source software licensed under the
 [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) license.
+
+## Scala specifics
+
+https://kafka.apache.org/20/documentation/streams/developer-guide/dsl-api.html#scala-dsl
+
+https://medium.com/@danieljameskay/kafka-streams-dsl-for-scala-the-basics-11d603295f5c
+
+## TODOs
+
+https://jaceklaskowski.gitbooks.io/mastering-kafka-streams/
+
+https://docs.confluent.io/current/streams/faq.html
+
+https://docs.confluent.io/current/streams/developer-guide/memory-mgmt.html
+
+https://docs.confluent.io/current/streams/developer-guide/config-streams.html
+
+https://kafka.apache.org/20/documentation/streams/developer-guide/dsl-api.html
+
+* custom serdes
+
+* avro & SR
+
+* joins
+
+* topologytestdriver
+
+https://kafka.apache.org/22/documentation/streams/developer-guide/testing.html#testing-topologytestdriver
+
+* aggregating
+
+https://sachabarbs.wordpress.com/2019/01/28/kafkastreams-aggregating/
+
+## examples
+
+https://sachabarbs.wordpress.com/category/kafka/
